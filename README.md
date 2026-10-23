@@ -123,4 +123,4 @@ npm run build
 npm run preview
 ```
 
-Publica el contenido de `dist/` en el proveedor de hosting elegido. Como el sitio usa React Router, configura el hosting para servir `index.html` como alternativa para las rutas de la aplicación, por ejemplo `/experiencia` o `/contacto`. Conserva los archivos de `public/` y sus rutas para que se carguen imágenes, documentos y currículum.
+Publica el contenido de `dist/` en Vercel. El archivo `vercel.json` configura la alternativa a `index.html` que necesita React Router para que las rutas funcionen al actualizarlas o abrirlas directamente, por ejemplo `/experiencia` o `/contacto`. Conserva los archivos de `public/` y sus rutas para que se carguen imágenes, documentos y currículum.
