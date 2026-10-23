@@ -8,8 +8,8 @@ export const portfolioData = {
     timeZone: "Europe/Madrid",
     visitsNamespace: "raul-urbanos-portfolio",
     email: "raul.urbanos.esteban@gmail.com",
-    github: "https://github.com",
-    linkedin: "https://linkedin.com"
+    github: "https://github.com/raulurbanos25",
+    linkedin: "https://www.linkedin.com/in/ra%C3%BAl-urbanos-esteban-102846256/"
   },
 
   about: {
@@ -424,8 +424,8 @@ skills: [
         "/proyectos/indigodle/12.png"
       ],
       tags: ["React", "HTML", "JavaScript", "CSS", "JSX", "GitHub"],
-      github: "https://github.com",
-      demo: "https://example.com"
+      github: "https://github.com/raulurbanos25/indigodle",
+      demo: "https://indigodle.vercel.app/"
     }
   ],
 
