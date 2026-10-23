@@ -33,7 +33,7 @@ function getVisitRequest(namespace, key) {
   return request;
 }
 
-export function useVisitCounter(namespace, key = 'visitas') {
+export function useVisitCounter(namespace, key = 'visitas-desde-cero') {
   const [state, setState] = useState({ visits: null, failed: false });
 
   useEffect(() => {
