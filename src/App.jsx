@@ -14,11 +14,8 @@ import AboutPage from './pages/AboutPage';
 import ProjectsPage from './pages/ProjectsPage';
 import ExperiencePage from './pages/ExperiencePage';
 import ContactPage from './pages/ContactPage';
-import * as AcademicModule from './pages/AcademicPage';
+import { AcademicPage } from './pages/AcademicPage';
 import { CvPage } from './pages/CvPage';
-
-// Funciona tanto si AcademicPage usa "export default" como "export const AcademicPage"
-const AcademicPage = AcademicModule.default ?? AcademicModule.AcademicPage;
 
 // Rutas que apuntan a la página académica. Una de ellas tiene que coincidir
 // con el "to" del botón en Navbar.jsx. Cuando lo tengas claro, deja solo una.
