@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Routes, Route, Outlet, useLocation, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Loader2 } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 import { usePortfolioData } from './hooks/usePortfolioData';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -131,6 +132,7 @@ function App() {
           <Route path="/cv" element={<CvPage />} />
         </Route>
       </Routes>
+      <Analytics />
     </IntroContext.Provider>
   );
 }
