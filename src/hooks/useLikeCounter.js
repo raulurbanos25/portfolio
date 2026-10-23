@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { getVisitSessionStart } from './useVisitDuration';
 
 const API = 'https://abacus.jasoncameron.dev';
-const LIKE_COUNTER_KEY = 'me-gusta-desde-cero';
+const LIKE_COUNTER_KEY = 'me-gusta-v2';
 
 export function useLikeCounter(namespace) {
   const [likes, setLikes] = useState(null);
@@ -40,17 +40,17 @@ export function useLikeCounter(namespace) {
   const like = useCallback(async () => {
     if (!namespace || liked || loading) return;
     setLoading(true);
+    setLiked(true);
     try { sessionStorage.setItem(storageKey, '1'); } catch { /* el estado local sigue protegiendo esta instancia */ }
     try {
       const response = await fetch(`${API}/hit/${namespace}/${LIKE_COUNTER_KEY}`);
       if (!response.ok) throw new Error(String(response.status));
       const result = await response.json();
       setLikes(result.value);
-      setLiked(true);
       try { sessionStorage.setItem(storageKey, '1'); } catch { /* la página mantiene el estado */ }
     } catch {
-      // No se registra como me gusta si el servidor no confirmó la operación.
-      try { sessionStorage.removeItem(storageKey); } catch { /* ignorar */ }
+      // La respuesta puede haberse perdido después de procesar el hit.
+      // Conservamos la marca para no volver a sumarlo en esta visita.
     } finally {
       setLoading(false);
     }

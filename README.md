@@ -95,11 +95,12 @@ Antes de publicar, revisa en `portfolioData.js` los enlaces de código y demo de
 
 ## Métricas
 
-Las visitas generales, los «Me gusta», las entradas al proyecto y las vistas de cada captura se guardan en el servicio remoto configurado en los hooks de `src/hooks/`. No dependen de que el panel de métricas esté visible.
+Las visitas generales, los «Me gusta», las entradas al proyecto y las vistas de cada captura se guardan en el servicio remoto configurado en los hooks de `src/hooks/`. No dependen de que el panel de métricas esté visible. Las visitas y los «Me gusta» usan contadores nuevos (`visitas-v2` y `me-gusta-v2`) para empezar una serie visible desde cero.
 
 - Cambiar de sección, volver a Inicio o recargar mantiene la visita actual y su cronómetro.
 - Salir del sitio y volver a entrar inicia una visita nueva.
 - Se puede registrar un «Me gusta» por visita.
+- La marca local de visita y de «Me gusta» se conserva si se recarga o navega dentro del portfolio. En una respuesta de red incierta no se reintenta el incremento, para evitar duplicados; en ese caso el contador puede tardar en reflejar el registro hasta la siguiente lectura.
 - Abrir la ficha de un proyecto registra una entrada; mostrar una captura en el carrusel o ampliarla registra una vista de esa imagen.
 - Los contadores son totales agregados; no identifican a personas concretas ni deduplican visitantes entre dispositivos.
 

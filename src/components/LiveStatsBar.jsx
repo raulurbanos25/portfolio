@@ -45,7 +45,7 @@ export function LiveStatsBar() {
         <div className="flex items-center justify-between gap-2 px-3 py-4 sm:px-5">
           <div className="flex items-center gap-3">
             <span className="rounded-xl bg-rose-500/10 p-2.5 text-rose-400"><Heart size={17} /></span>
-            <div><p className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Me gusta</p><p className="text-lg font-bold tabular-nums text-slate-100">{likes === null ? '—' : likes.toLocaleString('es-ES')}</p></div>
+            <div><p className="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Me gusta</p><p className="text-lg font-bold tabular-nums text-slate-100">{likes === null ? '—' : likes.toLocaleString('es-ES')}</p><p className="text-[10px] text-slate-500">{liked ? 'Ya has votado en esta visita' : 'Un voto por visita'}</p></div>
           </div>
           <button type="button" onClick={like} disabled={liked || loading} aria-pressed={liked} aria-label={liked ? 'Ya te gusta este portfolio' : 'Me gusta este portfolio'} className={`rounded-xl border p-2.5 transition-colors ${liked ? 'border-rose-500/40 bg-rose-500/15 text-rose-400' : 'border-white/10 text-slate-400 hover:border-rose-500/40 hover:text-rose-400'}`}>
             <Heart size={17} className={liked ? 'fill-current' : ''} />

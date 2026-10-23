@@ -156,7 +156,7 @@ function LikesCard({ namespace }) {
       <div className="mt-4 flex items-center justify-between gap-3">
         <div>
           <p className="text-3xl font-bold tabular-nums text-slate-100">{likes === null ? '—' : likes.toLocaleString('es-ES')}</p>
-          <p className="mt-1 text-xs text-slate-400">personas apoyan este portfolio</p>
+          <p className="mt-1 text-xs text-slate-400">{liked ? 'Ya has votado en esta visita' : 'Un voto por visita'}</p>
         </div>
         <button type="button" onClick={like} disabled={liked || loading} aria-pressed={liked} aria-label={liked ? 'Ya te gusta este portfolio' : 'Me gusta este portfolio'} className={`rounded-xl border p-3 transition-all ${liked ? 'border-rose-500/40 bg-rose-500/15 text-rose-400' : 'border-white/10 bg-white/5 text-slate-300 hover:border-rose-500/40 hover:bg-rose-500/10 hover:text-rose-400'}`}>
           <Heart size={22} className={liked ? 'fill-current' : ''} />

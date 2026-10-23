@@ -23,9 +23,8 @@ function getVisitRequest(namespace, key) {
     .then((data) => data.value)
     .catch((error) => {
       visitRequests.delete(storageKey);
-      if (shouldCount) {
-        try { sessionStorage.removeItem(storageKey); } catch { /* ignorar */ }
-      }
+      // No quitar la marca: el servidor pudo procesar /hit aunque se perdiera
+      // la respuesta. Reintentar en esta visita podría incrementar dos veces.
       throw error;
     });
 
@@ -33,7 +32,7 @@ function getVisitRequest(namespace, key) {
   return request;
 }
 
-export function useVisitCounter(namespace, key = 'visitas-desde-cero') {
+export function useVisitCounter(namespace, key = 'visitas-v2') {
   const [state, setState] = useState({ visits: null, failed: false });
 
   useEffect(() => {

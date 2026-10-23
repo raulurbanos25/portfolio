@@ -13,8 +13,8 @@ async function readCounter(name) {
 
 try {
   const [visits, likes] = await Promise.all([
-    readCounter('visitas-desde-cero'),
-    readCounter('me-gusta-desde-cero'),
+    readCounter('visitas-v2'),
+    readCounter('me-gusta-v2'),
   ]);
   const metrics = {
     portfolio: namespace,
