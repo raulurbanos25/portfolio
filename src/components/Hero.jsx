@@ -126,7 +126,7 @@ export const Hero = () => {
                   
                   {/* Imagen de perfil profesional */}
                   <img
-                    src="foto/raul.jpg"
+                    src="/foto/raul.jpg"
                     alt="Raúl Urbanos Esteban - Desarrollador Frontend"
                     className="w-full h-full object-cover object-[center_30%] group-hover:scale-105 transition-transform duration-700"
                   />
